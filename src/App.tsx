@@ -1,9 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, ChangeEvent, FormEvent } from 'react';
 import './App.css';
 import logo from './Loner.svg';
 
+interface FormData {
+  serverAddress: string;
+  serverPort: string;
+  username: string;
+  password: string;
+  authMethod: string;
+}
+
 function App() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     serverAddress: '',
     serverPort: '',
     username: '',
@@ -12,9 +20,9 @@ function App() {
   });
 
   const [showSettings, setShowSettings] = useState(false);
-  const settingsRef = useRef(null);
+  const settingsRef = useRef<HTMLDivElement>(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
@@ -22,7 +30,7 @@ function App() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!formData.serverAddress) {
       alert('请在设置中填写服务器地址');
@@ -45,8 +53,8 @@ function App() {
     setShowSettings(!showSettings);
   };
 
-  const handleClickOutside = (event) => {
-    if (settingsRef.current && !settingsRef.current.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (settingsRef.current && !settingsRef.current.contains(event.target as Node)) {
       setShowSettings(false);
     }
   };
