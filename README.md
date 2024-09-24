@@ -50,11 +50,11 @@ Piver 是一个用于管理 Proxmox Virtual Environment (PVE) 的现代化 Web �
    yarn run prod
    ```  
 
-请参考 `server/README.md` 文件了解后端服务器的部署说明。
+请参考 [server/README.md](server/README.md) 文件了解后端服务器的部署说明。
 
 ## 贡献
 
-欢迎贡献代码、报告问题或提出新功能建议。请查看 `CONTRIBUTING.md` 文件了解更多信息。
+欢迎贡献代码、报告问题或提出新功能建议。请查看 [CONTRIBUTING.md](CONTRIBUTING.md) 文件了解更多信息。
 
 ## 许可证
 
