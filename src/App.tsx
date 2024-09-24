@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, ChangeEvent, FormEvent } from 'react';
 import './App.css';
 import logo from './Loner.svg';
+import axios from 'axios';
 
 interface FormData {
   serverAddress: string;
@@ -11,34 +12,51 @@ interface FormData {
 }
 
 function App() {
-  const [formData, setFormData] = useState<FormData>({
-    serverAddress: '',
-    serverPort: '',
-    username: '',
-    password: '',
-    authMethod: 'pam'
+  const [formData, setFormData] = useState<FormData>(() => {
+    // 从 localStorage 中获取保存的数据，如果没有则使用默认值
+    const savedData = localStorage.getItem('loginFormData');
+    return savedData ? JSON.parse(savedData) : {
+      serverAddress: '',
+      serverPort: '',
+      username: '',
+      password: '',
+      authMethod: 'pam'
+    };
   });
 
   const [showSettings, setShowSettings] = useState(false);
   const settingsRef = useRef<HTMLDivElement>(null);
 
+  // 当 formData 变化时，保存到 localStorage
+  useEffect(() => {
+    localStorage.setItem('loginFormData', JSON.stringify(formData));
+  }, [formData]);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
-      [name]: name === 'serverPort' && value === '' ? '8006' : value // 如果 serverPort 为空，设置默认值为 8006
+      [name]: name === 'serverPort' && value === '' ? '8006' : value
     }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.serverAddress) {
       alert('请在设置中填写服务器地址');
       setShowSettings(true);
       return;
     }
-    console.log('表单提交数据:', formData);
-    // 在这里处理登录逻辑
+    try {
+      console.log('发送请求的数据:', formData);
+      const response = await axios.post('/api/login', formData);
+      console.log('登录成功:', response.data);
+      // 在这里处理登录成功的逻辑，例如跳转到主页面
+    } catch (error) {
+      const err = error as any;
+      console.error('登录失败:', err.response ? err.response.data : err.message);
+      alert('登录失败，请检查您的服务器地址和凭据');
+    }
   };
 
   const handleReset = () => {

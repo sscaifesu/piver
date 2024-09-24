@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Pviwer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pviwer 是一个用于管理 Proxmox Virtual Environment (PVE) 的现代化 Web 应用程序。它提供了一个直观、用户友好的界面，使用户能够轻松地管理和监控他们的 PVE 环境。
 
-## Available Scripts
+## 项目特点
 
-In the project directory, you can run:
+- 基于 React 的响应式前端界面
+- 安全的后端 API，用于与 PVE 服务器通信
+- 支持多服务器管理
+- 本地存储登录信息，提高用户体验
+- 灵活的服务器设置，支持自定义地址、端口和认证方式
 
-### `npm start`
+## 技术栈
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 前端：React, TypeScript, Axios
+- 后端：Node.js, Express
+- 构建工具：Create React App
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 快速开始
 
-### `npm test`
+1. 克隆仓库：
+   ```
+   git clone https://github.com/sscaifesu/pviwer.git
+   cd pviwer
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 安装依赖：
+   ```
+   yarn install
+   ```
 
-### `npm run build`
+3. 启动前端服务：
+   ```
+   yarn run start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. 在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看应用。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. 启动后端服务（开发环境）：
+   ```
+   cd server
+   yarn install
+   yarn run dev
+   ```  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 启动后端服务（生产环境）
+   ```
+   cd server
+   yarn install
+   yarn run prod
+   ```  
 
-### `npm run eject`
+请参考 `server/README.md` 文件了解后端服务器的部署说明。
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 贡献
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+欢迎贡献代码、报告问题或提出新功能建议。请查看 `CONTRIBUTING.md` 文件了解更多信息。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 许可证
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+本项目采用 Apache-2.0 许可证。详情请见 [LICENSE](LICENSE) 文件。
 
-## Learn More
+## 更新日志
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+有关版本更新的详细信息，请查看 [CHANGELOG.md](CHANGELOG.md) 文件。
