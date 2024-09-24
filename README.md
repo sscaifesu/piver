@@ -1,6 +1,6 @@
-# Pviwer
+# Piver
 
-Pviwer 是一个用于管理 Proxmox Virtual Environment (PVE) 的现代化 Web 应用程序。它提供了一个直观、用户友好的界面，使用户能够轻松地管理和监控他们的 PVE 环境。
+Piver 是一个用于管理 Proxmox Virtual Environment (PVE) 的现代化 Web 应用程序。它提供了一个直观、用户友好的界面，使用户能够轻松地管理和监控他们的 PVE 环境。
 
 ## 项目特点
 
@@ -20,8 +20,8 @@ Pviwer 是一个用于管理 Proxmox Virtual Environment (PVE) 的现代化 Web 
 
 1. 克隆仓库：
    ```
-   git clone https://github.com/sscaifesu/pviwer.git
-   cd pviwer
+   git clone git@github.com:sscaifesu/piver.git
+   cd piver
    ```
 
 2. 安装依赖：

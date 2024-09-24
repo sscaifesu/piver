@@ -1,6 +1,6 @@
-# Pviwer Server
+# Piver Server
 
-这是 Pviwer 的后端服务器。它提供了一个安全的 API 接口，用于与 Proxmox Virtual Environment (PVE) 进行通信。
+这是 Piver 的后端服务器。它提供了一个安全的 API 接口，用于与 Proxmox Virtual Environment (PVE) 进行通信。
 
 ## 改进
 
